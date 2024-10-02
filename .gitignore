@@ -166,3 +166,11 @@ raw_dataset/
 sup-simcse-roberta-large/
 preprocessed_data/
 clustered_dataset/
+
+# Figures
+figure_making.ipynb
+sharedcon_논문그림.pptx
+
+# 기타등등
+미팅w영욱/
+code_for_results/
