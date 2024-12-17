@@ -35,8 +35,7 @@ def test(test_loader,model_main,log):
         for idx,batch in enumerate(test_loader):
             if "ihc" in log.param.dataset:
                 text_name = "post"
-                label_name = "label"   # hsan
-                # label_name2 = "cluster_label"   # hsan
+                label_name = "label"
             elif "dynahate" in log.param.dataset:
                 text_name = "post"
                 label_name = "label"
@@ -51,19 +50,14 @@ def test(test_loader,model_main,log):
             text = batch[text_name]
             attn = batch[text_name+"_attn_mask"]
 
-            # hsan
             label = batch[label_name]
             label = torch.tensor(label)
             label = torch.autograd.Variable(label).long()
-            # cluster_label = batch[label_name2]
-            # cluster_label = torch.tensor(cluster_label)
-            # cluster_label = torch.autograd.Variable(cluster_label).long()
 
             if torch.cuda.is_available():
                 text = text.cuda()
                 attn = attn.cuda()
                 label = label.cuda()
-                # cluster_label = cluster_label.cuda()    # hsan
 
             last_layer_hidden_states, supcon_feature_1 = model_main.get_cls_features_ptrnsp(text,attn) # #v2
             pred_1 = model_main(last_layer_hidden_states)

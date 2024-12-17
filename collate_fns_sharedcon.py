@@ -4,7 +4,7 @@ import itertools
 ################################################################
 
 # Credits https://github.com/varsha33/LCL_loss
-def collate_fn_ihc(data):   # hsan: cluster label 필요없어
+def collate_fn_ihc(data):
 
     def merge(sequences,N=None):
         lengths = [len(seq) for seq in sequences]
@@ -80,7 +80,7 @@ def collate_fn_w_aug_ihc_imp_con(data): # original + augmented (all original pos
     d={}
     try:
         d["label"] = item_info["label"]
-        d["cluster_label"] = item_info["cluster_label"]     # hsan: cluster_label에 대한 key 추가
+        d["cluster_label"] = item_info["cluster_label"]
     except KeyError:
         print("key error at collate_fn_w_aug_ihc_imp_con")
 

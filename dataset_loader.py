@@ -22,7 +22,7 @@ class ihc_dataset(Dataset):
 
         if self.training and self.w_aug:
             item["post"] = self.data["tokenized_post"][index]
-            item["cluster_label"] = self.data["cluster_label"][index]   # hsan: cluster_label key값 저장
+            item["cluster_label"] = self.data["cluster_label"][index]
 
         else:
             item["post"] = torch.LongTensor(self.data["tokenized_post"][index])
@@ -39,7 +39,7 @@ class ihc_dataset(Dataset):
             print(self.data)
             with open("key_error.pickle", 'wb') as f:
                 pickle.dump(self.data, f)
-            # self.data를 피클로 저장
+            
 
         
 
@@ -58,7 +58,7 @@ class dynahate_dataset(Dataset):
 
         if self.training and self.w_aug:
             item["post"] = self.data["tokenized_post"][index]
-            item["cluster_label"] = self.data["cluster_label"][index]   # hsan: cluster_label key값 저장
+            item["cluster_label"] = self.data["cluster_label"][index]
         else:
             item["post"] = torch.LongTensor(self.data["tokenized_post"][index])
 
@@ -84,7 +84,7 @@ class sbic_dataset(Dataset):
 
         if self.training and self.w_aug:
             item["post"] = self.data["tokenized_post"][index]
-            item["cluster_label"] = self.data["cluster_label"][index]   # hsan: cluster_label key값 저장
+            item["cluster_label"] = self.data["cluster_label"][index]
         else:
             item["post"] = torch.LongTensor(self.data["tokenized_post"][index])
 

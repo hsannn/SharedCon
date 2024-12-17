@@ -2,9 +2,7 @@ tuning_param  = ["dataset", "load_dir"]
 dataset = ["ihc_pure","sbic","dynahate"] # dataset for evaluation
 
 # saved model location
-load_dir = ['/home/sunny5574/new_shacon/save/simcse/simcse_sbic_c25/0', 
-            '/home/sunny5574/new_shacon/save/simcse/simcse_sbic_c25/1', 
-            '/home/sunny5574/new_shacon/save/simcse/simcse_sbic_c25/2']
+load_dir = ['./model_location1', "./model_location2"]
 
 
 train_batch_size = 8

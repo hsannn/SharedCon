@@ -34,7 +34,6 @@ def preprocess_data(sent_emb_model, dataset, tokenizer_type):
 			for i, one_class in enumerate(data["class"]):
 				label1.append(class2int[one_class])
 			
-			# label을 class가 아닌 cluster가 되게 한다.
 			cluster_value = []
 			post_value = []
 			for (columnName, columnData) in data.iteritems():
@@ -244,8 +243,6 @@ def preprocess_data(sent_emb_model, dataset, tokenizer_type):
 
 	else:
 		raise NotImplementedError
-	
-
 	
 
 if __name__ == '__main__':
